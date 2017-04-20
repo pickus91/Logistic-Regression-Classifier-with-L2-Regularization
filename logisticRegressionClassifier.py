@@ -4,11 +4,7 @@ Created on Mon Apr 17 11:10:54 2017
 
 @author: pickus
 """
-#Logistic Regression from Scratch
 import numpy as np
-
-
-
 
 class LogisticRegression(object):    
     """Logistic Regression for binary classification"""
