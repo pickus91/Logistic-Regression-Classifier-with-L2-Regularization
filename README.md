@@ -19,7 +19,7 @@ This code is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) f
 
 Logistic regression is a linear classification model that predicts binary outcomes based on set of explanatory variables (i.e. features). In logistic regression, we are interested in determining the probability that an observation belongs to a given class. We can map a linear combination of weights and sample features and transform them to a probability value between 0 and 1 through the logistic function:
 <div align = "center">
-<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation1.PNG"  height="200" width="400">
+<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation1.PNG"  height="225" width="425">
 </div>
 <div align = "center">
 <img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/logisticFunction.png"  height="350" width="425">
@@ -34,7 +34,7 @@ If φ(z) falls above a probabilistic threshold (say, 50%) for a given sample, we
 If the logistic regression model suffers from high variance (over-fitting the training data), it may be a good idea to perform regularization to penalize large weight coefficients. In L2 regularization, we introduce the following bias term to the logistic regression cost function:
 
 <div align = "center">
-<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation3.PNG"  height="50" width="100">
+<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation3.PNG"  height="75" width="1">
 </div>
 
 Defining the regularization parameter C=1/λ, the new logistic regression cost function becomes: 
@@ -48,9 +48,21 @@ As seen below, as we increase regularization strength, the weight coefficients o
 
 ## Example - Classification of Breast Cancer Wisconsin Dataset
 
-To test the logistic regression classifier, we’ll be using data from the [Wisconsin Breast Cancer (Diagnostic) Data set](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)) from the UCI Machine Learning Repository. The data set consists of ten real-valued features computed from a digitized image of a final needle aspirate (FNA) of a breast mass with 699 observations. The features computed describe various characteristics of the cell nuclei present in biopsy images in both benign and malignant breast tumor.
+To test the logistic regression classifier, we’ll be using data from the [Wisconsin Breast Cancer (Diagnostic) Data set](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)) from the UCI Machine Learning Repository. The data set consists of nine real-valued features computed from a digitized image of a final needle aspirate (FNA) of a breast mass with 699 observations. The features computed describe various characteristics of the cell nuclei present in biopsy images in both benign and malignant breast tumor.
 
-[insert table]
+|    | Feature                     | Value Range   |
+|:--:|:---------------------------:| :------------ |
+|1   | Clump Thickness             | 1 - 10        | 
+|2   | Uniformity Cell Size        | 1 - 10        |   
+|3   |Uniformity Cell Shape        | 1 - 10        | 
+|4   |Marginal Adhesion            | 1 - 10        |
+|5   |Single Epithelial Cell Size  | 1 - 10        |
+|6   |Bar Nuclei                   | 1 - 10        |
+|7   |Bland Chromatin              | 1 - 10        |
+|8   |Normal Nucleoli              | 1 - 10        |
+|9   |Mitosis                      | 1 - 10        |
+|    |Diagnoses                    | 2, 4          |
+					
 
 After imputing missing features values with their mean feature values, we will divide the dataset into separate training and testing sets (70% training, 30% testing), conduct a z-score normalization on the training data (a requirement of L2 regularization to work), and then perform principle component analysis (PCA) to reduce the feature subspace to avoid excessive dimensionality and improve the computational efficiency of the logistic regression model.
 <div align = "center">
@@ -88,11 +100,10 @@ performance = LR.performanceEval(predictions, y_test)
 We can visually see how the model performs using the ```predictionPlot``` and ```plotDecisionRegions``` methods. The prediction plot shows how each test sample maps onto the logistic function, while the decision region plot shows how our logistic regression model divides the feature subspace by predicted class.
 
 <div>
-        
-            <img src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/logisticCurvePredictionPlot.png" alt="" class="first" height = "350" width = "425">
-            
-             <img src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/decisionBounds.png" alt="" class="first" height = "350" width = "425">                                
-        
+<ul>        
+<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/logisticCurvePredictionPlot.png"  height="350" width="425">
+<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/decisionBounds.png"  height="350" width="425">
+ </ul>
 </div>
 
 Note, it is often best practice to use k-fold cross-validation to obtain a reliable estimate of this models generalization error. Increases in performance can also be obtained by tuning the regularization parameter, in which case holdout cross-validation should be used.
