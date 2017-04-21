@@ -19,7 +19,7 @@ This code is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) f
 
 Logistic regression is a linear classification model that predicts binary outcomes based on set of explanatory variables (i.e. features). In logistic regression, we are interested in determining the probability that an observation belongs to a given class. We can map a linear combination of weights and sample features and transform them to a probability value between 0 and 1 through the logistic function:
 <div align = "center">
-<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation1.PNG"  height="225" width="425">
+<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation1.PNG"  height="245" width="445">
 </div>
 <div align = "center">
 <img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/logisticFunction.png"  height="350" width="425">
@@ -34,12 +34,12 @@ If φ(z) falls above a probabilistic threshold (say, 50%) for a given sample, we
 If the logistic regression model suffers from high variance (over-fitting the training data), it may be a good idea to perform regularization to penalize large weight coefficients. In L2 regularization, we introduce the following bias term to the logistic regression cost function:
 
 <div align = "center">
-<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation3.PNG"  height="75" width="125">
+<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation3.PNG"  height="80" width="160">
 </div>
 
 Defining the regularization parameter C=1/λ, the new logistic regression cost function becomes: 
 <div align = "center">
-<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation4.PNG"  height="250" width="450">
+<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation4.PNG"  height="275" width="475">
 </div>
 As seen below, as we increase regularization strength, the weight coefficients of the logistic regression model shrink.
 <div align = "center">
