@@ -28,8 +28,7 @@ LR = LogisticRegression(learningRate = 0.01, numIterations = 20, penalty = 'L2',
         <ul>
             <img src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/logisticCurvePredictionPlot.png" alt="" class="first" height = "350" width = "425">
             
-             <img src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/decisionBounds.png" alt="" class="first" height = "350" width = "425">
-                                   
+             <img src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/decisionBounds.png" alt="" class="first" height = "350" width = "425">                                   
         </ul>
 <div>
 
