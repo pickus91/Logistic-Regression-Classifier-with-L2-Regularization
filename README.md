@@ -25,7 +25,7 @@ Logistic regression is a linear classification model that predicts binary outcom
 <img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/logisticFunction.png"  height="350" width="425">
 </div>
 
-If φ(z) falls above a probabilistic threshold (say, 50%) for a given sample, we categorize the sample as class 1, otherwise class 0. The weights w of the logistic function can be learned by minimizing the log-likelihood function *J* (the logistic regression cost function) through gradient descent.
+If φ(z) falls above a probabilistic threshold (say, 50%) for a given sample, we categorize the sample as class 1, otherwise class 0. The weights _**w**_ of the logistic function can be learned by minimizing the log-likelihood function *J* (the logistic regression cost function) through gradient descent.
 
 <div align = "center">
 <img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation2.PNG"  height="350" width="425">
@@ -57,7 +57,7 @@ To test the logistic regression classifier, we’ll be using data from the [Wisc
 After imputing missing features values with their mean feature values, we will divide the dataset into separate training and testing sets (70% training, 30% testing), conduct a z-score normalization on the training data (a requirement of L2 regularization to work), and then perform principle component analysis (PCA) to reduce the feature subspace to avoid excessive dimensionality and improve the computational efficiency of the logistic regression model.
 <div align = "center">
 <img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/pcaExplainedVariance.png"  height="350" width="425">
-</div>
+`</div>
 
 For the sake of visualizations in this example, we will project the training data onto the feature subspace defined by the first two principle components (2-dimensions), which have a cumulative explained variance of 75%. As seen below, we see that the data is almost linearly separable by class. 
 
@@ -90,7 +90,10 @@ performance = LR.performanceEval(predictions, y_test)
 </div>
 
 We can visually see how the model performs using the ```predictionPlot``` and ```plotDecisionRegions``` methods. The prediction plot shows how each test sample maps onto the logistic function, while the decision region plot shows how our logistic regression model divides the feature subspace by predicted class.
-
+```
+LR.plotDecisionRegions(X_test_pca, y_test)
+LR.predictionPlot(X_test_pca, y_test)
+```
 <div>
 <ul>        
 <img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/logisticCurvePredictionPlot.png"  height="350" width="425">
