@@ -34,7 +34,7 @@ If φ(z) falls above a probabilistic threshold (say, 50%) for a given sample, we
 If the logistic regression model suffers from high variance (over-fitting the training data), it may be a good idea to perform regularization to penalize large weight coefficients. In L2 regularization, we introduce the following bias term to the logistic regression cost function:
 
 <div align = "center">
-<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation3.PNG"  height="75" width="1">
+<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation3.PNG"  height="75" width="125">
 </div>
 
 Defining the regularization parameter C=1/λ, the new logistic regression cost function becomes: 
@@ -50,19 +50,9 @@ As seen below, as we increase regularization strength, the weight coefficients o
 
 To test the logistic regression classifier, we’ll be using data from the [Wisconsin Breast Cancer (Diagnostic) Data set](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)) from the UCI Machine Learning Repository. The data set consists of nine real-valued features computed from a digitized image of a final needle aspirate (FNA) of a breast mass with 699 observations. The features computed describe various characteristics of the cell nuclei present in biopsy images in both benign and malignant breast tumor.
 
-|    | Feature                     | Value Range   |
-|:--:|:---------------------------:| :------------ |
-|1   | Clump Thickness             | 1 - 10        | 
-|2   | Uniformity Cell Size        | 1 - 10        |   
-|3   |Uniformity Cell Shape        | 1 - 10        | 
-|4   |Marginal Adhesion            | 1 - 10        |
-|5   |Single Epithelial Cell Size  | 1 - 10        |
-|6   |Bar Nuclei                   | 1 - 10        |
-|7   |Bland Chromatin              | 1 - 10        |
-|8   |Normal Nucleoli              | 1 - 10        |
-|9   |Mitosis                      | 1 - 10        |
-|    |Diagnoses                    | 2, 4          |
-					
+<div align = "center">
+<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/WisconsinBreastCancer_FeatureTable.PNG"  height="350" width="425">
+</div>					
 
 After imputing missing features values with their mean feature values, we will divide the dataset into separate training and testing sets (70% training, 30% testing), conduct a z-score normalization on the training data (a requirement of L2 regularization to work), and then perform principle component analysis (PCA) to reduce the feature subspace to avoid excessive dimensionality and improve the computational efficiency of the logistic regression model.
 <div align = "center">
@@ -95,7 +85,9 @@ Now that we have fit the logistic regression model to our training data, we can 
 predictions, probs = LR.predict(X_test_pca, 0.5)
 performance = LR.performanceEval(predictions, y_test)
 ```
-[performance table]
+<div align = "center">
+<img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/performanceMetrics.PNG"  height="350" width="425">
+</div>
 
 We can visually see how the model performs using the ```predictionPlot``` and ```plotDecisionRegions``` methods. The prediction plot shows how each test sample maps onto the logistic function, while the decision region plot shows how our logistic regression model divides the feature subspace by predicted class.
 
