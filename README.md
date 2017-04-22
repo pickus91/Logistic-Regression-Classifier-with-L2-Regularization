@@ -17,7 +17,7 @@ This code is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) f
 
 ## Synopsis
 
-Logistic regression is a linear classification model that predicts binary outcomes based on set of explanatory variables (i.e. features). In logistic regression, we are interested in determining the probability that an observation belongs to a given class. We can map a linear combination of weights and sample features and transform them to a probability value between 0 and 1 through the logistic function:
+Logistic regression is a linear classification model that predicts binary outcomes based on a set of explanatory variables (i.e. features). In logistic regression, we are interested in determining the probability that an observation belongs to a given class. We can map a linear combination of weights and sample features and transform them to a probability value between 0 and 1 through the logistic function:
 <div align = "center">
 <img style="float: left;" src="https://github.com/pickus91/Logistic-Regression-Classifier-with-L2-Regularization/blob/master/figures/equation1.PNG"  height="245" width="445">
 </div>
